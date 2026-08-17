@@ -1,0 +1,43 @@
+## 🎯 Objectif
+Documenter le processus complet d'enrôlement Automated Device Enrollment (ADE) pour les équipements macOS hors-flux ABM initial, en utilisant Apple Configurator et Microsoft Intune.
+
+---
+
+## 🛠️ Prérequis
+- Compte Apple Business Manager (ABM) avec les privilèges d'administration.
+- Application **Apple Configurator** installée sur un iPhone/iPad connecté au compte ABM.
+- Tenant Microsoft Intune configuré avec un jeton d'enrôlement Apple (ADE Token) valide.
+- Licence Microsoft 365 / Intune attribuée à l'utilisateur final.
+
+---
+
+## 📋 Étapes de Déploiement
+
+### Étape 1 : Enrôlement initial via Apple Configurator
+1. Démarrer le Mac/MacBook cible sur l'écran d'accueil initial (Setup Assistant).
+2. Ouvrir l'application **Apple Configurator** sur l'iPhone d'administration.
+3. Approcher l'iPhone du Mac jusqu'à la détection du code d'association visualisé sur l'écran du Mac.
+4. Dans le portail **Apple Business Manager**, assigner le nouvel équipement au serveur MDM Microsoft Intune correspondant.
+
+### Étape 2 : Assignation du profil dans Microsoft Intune
+1. Accéder au centre d'administration **Microsoft Intune** (`intune.microsoft.com`).
+2. Naviguer vers : `Appareils` > `macOS` > `Enrôlement` > `Apple Configurator` > `Jetons du programme d'enrôlement`.
+3. Sélectionner le jeton de l'organisation > `Appareils`.
+4. Sélectionner le numéro de série du Mac concerné et cliquer sur **Assigner le profil**.
+5. Appliquer le profil d'inscription macOS défini pour l'organisation.
+
+### Étape 3 : Configuration du poste client (macOS)
+1. Connecter le Mac au réseau Wi-Fi local/entreprise.
+2. Passer les étapes du Setup Assistant jusqu'à l'écran d'enrôlement de l'organisation.
+3. Authentifier l'utilisateur final avec ses identifiants Entra ID (Azure AD).
+   * *Note : Si l'invite d'organisation n'apparaît pas immédiatement, redémarrer l'appareil ou revenir à l'écran de sélection de la langue.*
+4. Finaliser la création du compte utilisateur local et désactiver les options de télémétrie non requises.
+
+### Étape 4 : Post-configuration & Déploiement applicatif
+1. Dans **Intune**, ajouter l'utilisateur/l'appareil aux groupes Sécurité/Dynamiques dédiés pour déclencher le déploiement automatique des politiques de conformité et des applications.
+2. **Élévation de privilèges :**
+   * Dans les paramètres macOS > `Utilisateurs et groupes`, promouvoir le compte utilisateur local en administrateur si la politique de l'entreprise l'exige (ou utiliser le compte admin local géré via Intune LAPS / profil de configuration).
+3. **Vérification applicative :**
+   * Vérifier l'installation automatique du **Company Portal (Portail d'entreprise)**.
+   * Lancer l'installation de la suite Microsoft 365 et des outils de prise en main à distance (ex: TeamViewer).
+   * Valider l'octroi des permissions système macOS nécessaires (Accessibilité, Enregistrement d'écran, Accès complet au disque) pour les agents installés.
