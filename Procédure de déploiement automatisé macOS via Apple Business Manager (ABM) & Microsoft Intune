@@ -1,9 +1,9 @@
-## 🎯 Objectif
+Objectif
 Documenter le processus complet d'enrôlement Automated Device Enrollment (ADE) pour les équipements macOS hors-flux ABM initial, en utilisant Apple Configurator et Microsoft Intune.
 
 ---
 
-## 🛠️ Prérequis
+Prérequis
 - Compte Apple Business Manager (ABM) avec les privilèges d'administration.
 - Application **Apple Configurator** installée sur un iPhone/iPad connecté au compte ABM.
 - Tenant Microsoft Intune configuré avec un jeton d'enrôlement Apple (ADE Token) valide.
@@ -11,7 +11,7 @@ Documenter le processus complet d'enrôlement Automated Device Enrollment (ADE) 
 
 ---
 
-## 📋 Étapes de Déploiement
+Étapes de Déploiement
 
 ### Étape 1 : Enrôlement initial via Apple Configurator
 1. Démarrer le Mac/MacBook cible sur l'écran d'accueil initial (Setup Assistant).
