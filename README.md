@@ -1,4 +1,4 @@
-# 🍎 macOS Enterprise Administration & Troubleshooting Handbook
+#macOS Enterprise Administration & Troubleshooting Handbook
 
 Bienvenue sur ce dépôt personnel de documentation technique. 
 
@@ -6,7 +6,7 @@ Il regroupe mes procédures d'administration, mes fiches de déploiement MDM et 
 
 ---
 
-## 🎯 Objectif du Dépôt
+##Objectif du Dépôt
 
 - **Pérenniser les connaissances :** Centraliser les procédures opérationnelles standards (SOP) et les configurations d'outils d'entreprise (Microsoft Intune, Apple Business Manager, etc.).
 - **Partager les retours d'expérience (RETEX) :** Documenter les étapes de résolution d'incidents complexes et le déploiement d'outils système sous macOS.
@@ -14,5 +14,5 @@ Il regroupe mes procédures d'administration, mes fiches de déploiement MDM et 
 
 ---
 
-> 🔒 **Confidentialité & Anonymisation :**  
+> **Confidentialité & Anonymisation :**  
 > L'ensemble des documents publiés ici a été rendu anonyme. Aucun nom de client, identifiant de tenant, adresse IP ou donnée sensible n'est exposé.
